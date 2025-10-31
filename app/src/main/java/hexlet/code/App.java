@@ -30,10 +30,19 @@ public class App {
             return;
         }
 
+        checkExitProgram(gameNumber);
+
         String userName = sayHello(scanner);
         playGame(gameNumber, scanner, userName);
 
         scanner.close();
+    }
+
+    private static void checkExitProgram(int gameNumber) {
+        if (gameNumber == EXIT) {
+            System.out.println("Goodbye!");
+            System.exit(EXIT);
+        }
     }
 
     private static void showGameList() {
@@ -58,12 +67,11 @@ public class App {
 
     private static void playGame(int gameNumber, Scanner scanner, String userName) {
         switch (gameNumber) {
+            case GREET:
+                break;
             case EVEN:
                 Even.checkEven(NUMBER_ITERATIONS, scanner, userName);
                 break;
-            case EXIT:
-                System.out.println("Goodbye!");
-                System.exit(EXIT);
             default:
                 System.out.println("Invalid game number!");
         }
