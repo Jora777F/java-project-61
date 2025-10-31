@@ -1,12 +1,17 @@
 package hexlet.code;
 
+import hexlet.code.games.Even;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
 
     private static final int GREET = 1;
+    private static final int EVEN = 2;
     private static final int EXIT = 0;
+
+    private static final int NUMBER_ITERATIONS = 3;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -18,31 +23,43 @@ public class App {
         int gameNumber;
 
         try {
-            gameNumber = selectGame(scanner);
+            gameNumber = inputGameNumber(scanner);
         } catch (InputMismatchException e) {
             System.out.println("ERROR: Invalid input.");
             scanner.close();
             return;
         }
 
-        playGame(gameNumber, scanner);
+        String userName = sayHello(scanner);
+        playGame(gameNumber, scanner, userName);
 
         scanner.close();
     }
 
     private static void showGameList() {
         System.out.println(GREET + " - Greet");
+        System.out.println(EVEN + " - Even");
         System.out.println(EXIT + " - Exit");
     }
 
-    private static int selectGame(Scanner scanner) throws InputMismatchException {
+    private static int inputGameNumber(Scanner scanner) throws InputMismatchException {
         return scanner.nextInt();
     }
 
-    private static void playGame(int gameNumber, Scanner scanner) {
+    public static String sayHello(Scanner scanner) {
+        System.out.println("Welcome to the Brain Games!");
+
+        System.out.print("May I have your name? ");
+        String name = scanner.next();
+        System.out.println("Hello, " + name + "!");
+
+        return name;
+    }
+
+    private static void playGame(int gameNumber, Scanner scanner, String userName) {
         switch (gameNumber) {
-            case GREET:
-                Cli.hello(scanner);
+            case EVEN:
+                Even.checkEven(NUMBER_ITERATIONS, scanner, userName);
                 break;
             case EXIT:
                 System.out.println("Goodbye!");
