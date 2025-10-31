@@ -6,17 +6,17 @@ import java.util.Scanner;
 
 public class Even {
 
+    private static final int MIN_VALUE = 1;
+    private static final int MAX_VALUE = 100;
+
     public static void checkEven(int iterations, Scanner scanner, String userName) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-
-        int min = 1;
-        int max = 100;
 
         String[] questions = new String[iterations];
         String[] correctAnswers = new String[iterations];
 
         for (int i = 0; i < iterations; i++) {
-            int randomNumber = min + (int)(Math.random() * ((max - min) + 1));
+            int randomNumber = MIN_VALUE + (int) (Math.random() * ((MAX_VALUE - MIN_VALUE) + 1));
             questions[i] = String.valueOf(randomNumber);
             correctAnswers[i] = isEvenNumber(randomNumber) ? "yes" : "no";
         }
