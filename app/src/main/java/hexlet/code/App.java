@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 
 import java.util.InputMismatchException;
@@ -9,6 +10,7 @@ public class App {
 
     private static final int GREET = 1;
     private static final int EVEN = 2;
+    private static final int CALCULATOR = 3;
     private static final int EXIT = 0;
 
     private static final int NUMBER_ITERATIONS = 3;
@@ -48,6 +50,7 @@ public class App {
     private static void showGameList() {
         System.out.println(GREET + " - Greet");
         System.out.println(EVEN + " - Even");
+        System.out.println(CALCULATOR + " - Calculator");
         System.out.println(EXIT + " - Exit");
     }
 
@@ -71,6 +74,9 @@ public class App {
                 break;
             case EVEN:
                 Even.checkEven(NUMBER_ITERATIONS, scanner, userName);
+                break;
+            case CALCULATOR:
+                Calculator.calculate(NUMBER_ITERATIONS, scanner, userName);
                 break;
             default:
                 System.out.println("Invalid game number!");
