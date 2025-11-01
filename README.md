@@ -6,3 +6,6 @@
 
 #### Игра "Проверка на четность"
 [Even Game](app/assets/game.cast)
+
+#### Игра "Калькулятор"
+[Calculator Game](app/assets/calculator.cast)
