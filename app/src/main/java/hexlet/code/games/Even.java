@@ -2,14 +2,14 @@ package hexlet.code.games;
 
 import hexlet.code.engine.Engine;
 
+import java.security.SecureRandom;
 import java.util.Scanner;
-import java.util.Random;
 
 public class Even {
 
     private static final int MIN_VALUE = 1;
     private static final int MAX_VALUE = 100;
-    private static final Random RANDOM = new Random();
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     public static void checkEven(int iterations, Scanner scanner, String userName) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
