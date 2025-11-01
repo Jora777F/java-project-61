@@ -46,6 +46,13 @@ public class Progression {
         return sequence;
     }
 
+    /**
+     * Вычисление элемента последовательности.
+     * @param initialTerm начальный элемент
+     * @param commonDiff шаг
+     * @param n индекс
+     * @return элемент последовательности
+     */
     private static int calculateSequenceTerm(int initialTerm, int commonDiff, int n) {
         return initialTerm + (n - 1) * commonDiff;
     }
