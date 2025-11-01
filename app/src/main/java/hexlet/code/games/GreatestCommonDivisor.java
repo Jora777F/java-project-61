@@ -27,11 +27,11 @@ public class GreatestCommonDivisor {
     }
 
     private static int calculateDivisor(int firstNumber, int secondNumber) {
-       while (secondNumber != 0) {
-           int temp = firstNumber % secondNumber;
-           firstNumber = secondNumber;
-           secondNumber = temp;
-       }
-       return firstNumber;
+        while (secondNumber != 0) {
+            int temp = firstNumber % secondNumber;
+            firstNumber = secondNumber;
+            secondNumber = temp;
+        }
+        return firstNumber;
     }
 }
