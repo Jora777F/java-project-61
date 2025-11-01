@@ -76,7 +76,7 @@ public class App {
                 Even.checkEven(NUMBER_ITERATIONS, scanner, userName);
                 break;
             case CALCULATOR:
-                Calculator.calculate(NUMBER_ITERATIONS, scanner, userName);
+                Calculator.run(NUMBER_ITERATIONS, scanner, userName);
                 break;
             default:
                 System.out.println("Invalid game number!");
