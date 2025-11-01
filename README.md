@@ -12,3 +12,6 @@
 
 #### Игра "НОД"
 [Greatest Common Divisor](app/assets/gcd.cast)
+
+#### Игра "Арифметическая прогрессия"
+![Arithmetic Progression](app/assets/Arithmetic_Progression.png)
