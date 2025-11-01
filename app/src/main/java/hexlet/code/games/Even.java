@@ -1,15 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.engine.Engine;
+import hexlet.code.util.RandomGenerator;
 
-import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Even {
-
-    private static final int MIN_VALUE = 1;
-    private static final int MAX_VALUE = 100;
-    private static final SecureRandom RANDOM = new SecureRandom();
 
     public static void checkEven(int iterations, Scanner scanner, String userName) {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
@@ -18,7 +14,7 @@ public class Even {
         String[] correctAnswers = new String[iterations];
 
         for (int i = 0; i < iterations; i++) {
-            int randomNumber = RANDOM.nextInt(MAX_VALUE - MIN_VALUE + 1) + MIN_VALUE;
+            int randomNumber = RandomGenerator.generateNumber();
             questions[i] = String.valueOf(randomNumber);
             correctAnswers[i] = isEvenNumber(randomNumber) ? "yes" : "no";
         }
