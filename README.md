@@ -9,3 +9,6 @@
 
 #### Игра "Калькулятор"
 [Calculator Game](app/assets/calculator.cast)
+
+#### Игра "НОД"
+[Greatest Common Divisor](app/assets/gcd.cast)
