@@ -15,3 +15,6 @@
 
 #### Игра "Арифметическая прогрессия"
 ![Arithmetic Progression](app/assets/Arithmetic_Progression.png)
+
+#### Игра "Простое число"
+![Prime](app/assets/Prime.png)
