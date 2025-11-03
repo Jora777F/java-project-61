@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 import hexlet.code.games.GreatestCommonDivisor;
+import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 import java.util.InputMismatchException;
@@ -15,6 +16,7 @@ public class App {
     private static final int CALCULATOR = 3;
     private static final int GCD = 4;
     private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
     private static final int EXIT = 0;
 
     private static final int NUMBER_ITERATIONS = 3;
@@ -36,6 +38,7 @@ public class App {
             return;
         }
 
+        System.out.println();
         checkExitProgram(gameNumber);
 
         String userName = sayHello(scanner);
@@ -57,6 +60,7 @@ public class App {
         System.out.println(CALCULATOR + " - Calc");
         System.out.println(GCD + " - GCD");
         System.out.println(PROGRESSION + " - Progression");
+        System.out.println(PRIME + " - Prime");
         System.out.println(EXIT + " - Exit");
     }
 
@@ -89,6 +93,9 @@ public class App {
                 break;
             case PROGRESSION:
                 Progression.arithmeticProgression(NUMBER_ITERATIONS, scanner, userName);
+                break;
+            case PRIME:
+                Prime.checkPrime(NUMBER_ITERATIONS, scanner, userName);
                 break;
             default:
                 System.out.println("Invalid game number!");
