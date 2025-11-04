@@ -7,6 +7,9 @@ import java.util.Scanner;
 
 public class Prime {
 
+    private static final int BEGIN = 2;
+    private static final int END = 100;
+
     public static void checkPrime(int iterations, Scanner scanner, String userName) {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
@@ -14,17 +17,16 @@ public class Prime {
         String[] correctAnswers = new String[iterations];
 
         for (int i = 0; i < iterations; i++) {
-            int number = RandomGenerator.generateNumber(2, 100);
+            int number = RandomGenerator.generateNumber(BEGIN, END);
             questions[i] = String.valueOf(number);
             correctAnswers[i] = isPrimeNumber(number) ? "yes" : "no";
         }
 
         Engine.runGame(questions, correctAnswers, userName, scanner);
-
     }
 
     /**
-     * Алгоритм перебора делителей
+     * Алгоритм перебора делителей.
      * @param number число
      * @return true - если число простое
      */
