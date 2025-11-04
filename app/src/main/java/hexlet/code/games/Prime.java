@@ -26,9 +26,9 @@ public class Prime {
     }
 
     /**
-     * Алгоритм перебора делителей.
-     * @param number число
-     * @return true - если число простое
+     * Перебор делителей (trial division).
+     * @param number число, которое необходимо проверить
+     * @return true - если число является простым, в противном случае - false
      */
     private static boolean isPrimeNumber(int number)  {
         int firstFactor = 2;
