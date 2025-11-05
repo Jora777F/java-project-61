@@ -27,14 +27,22 @@ public class Prime {
 
     /**
      * Перебор делителей (trial division).
+     *
      * @param number число, которое необходимо проверить
      * @return true - если число является простым, в противном случае - false
      */
-    private static boolean isPrimeNumber(int number)  {
-        int firstFactor = 2;
-        int lastFactor = ((int) Math.sqrt(number)) + 1;
+    private static boolean isPrimeNumber(int number) {
+        if (number < 2) {
+            return false;
+        }
 
-        for (int i = firstFactor; i <= lastFactor; i++) {
+        if (number == 2) {
+            return true;
+        }
+
+        int lastFactor = ((int) Math.sqrt(number));
+
+        for (int i = 2; i <= lastFactor; i++) {
             if (number % i == 0) {
                 return false;
             }
