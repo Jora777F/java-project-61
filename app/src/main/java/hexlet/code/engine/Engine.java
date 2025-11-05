@@ -6,7 +6,7 @@ public class Engine {
 
     private static final int NUMBER_ITERATIONS = 3;
 
-    public static void runGame(String gameDescription, String[] questions, String[] correctAnswers) {
+    public static void runGame(String gameDescription, String[][] questionsAndAnswers) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Brain Games!");
@@ -16,9 +16,9 @@ public class Engine {
 
         System.out.println(gameDescription);
 
-        for (int i = 0; i < questions.length; i++) {
-            String question = questions[i];
-            String correctAnswer = correctAnswers[i];
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
+            String question = questionsAndAnswers[i][0];
+            String correctAnswer = questionsAndAnswers[i][1];
 
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
