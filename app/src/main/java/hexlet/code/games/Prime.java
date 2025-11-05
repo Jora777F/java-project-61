@@ -8,7 +8,7 @@ public class Prime {
     private static final int MIN_NUMBER = 2;
     private static final int MAX_NUMBER = 100;
 
-    public static void checkPrime() {
+    public static void run() {
         String gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         int iterations = Engine.getNumberIterations();

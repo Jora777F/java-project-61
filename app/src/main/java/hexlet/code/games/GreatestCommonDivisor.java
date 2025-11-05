@@ -8,7 +8,7 @@ public class GreatestCommonDivisor {
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 100;
 
-    public static void search() {
+    public static void run() {
         String gameDescription = "Find the greatest common divisor of given numbers.";
 
         int iterations = Engine.getNumberIterations();

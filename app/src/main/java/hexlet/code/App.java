@@ -74,19 +74,19 @@ public class App {
             case GREET:
                 break;
             case EVEN:
-                Even.checkEven();
+                Even.run();
                 break;
             case CALCULATOR:
                 Calculator.run();
                 break;
             case GCD:
-                GreatestCommonDivisor.search();
+                GreatestCommonDivisor.run();
                 break;
             case PROGRESSION:
                 Progression.run();
                 break;
             case PRIME:
-                Prime.checkPrime();
+                Prime.run();
                 break;
             default:
                 System.out.println("Unknown user choice: " + gameNumber);
