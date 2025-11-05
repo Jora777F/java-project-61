@@ -5,6 +5,9 @@ import hexlet.code.util.RandomGenerator;
 
 public class GreatestCommonDivisor {
 
+    private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 100;
+
     public static void search() {
         String gameDescription = "Find the greatest common divisor of given numbers.";
 
@@ -14,8 +17,8 @@ public class GreatestCommonDivisor {
         String[] correctAnswers = new String[iterations];
 
         for (int i = 0; i < iterations; i++) {
-            int firstNumber = RandomGenerator.generateNumber();
-            int secondNumber = RandomGenerator.generateNumber();
+            int firstNumber = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
+            int secondNumber = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
 
             int answer = calculateDivisor(firstNumber, secondNumber);
 

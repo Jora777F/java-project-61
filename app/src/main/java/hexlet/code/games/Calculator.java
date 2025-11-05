@@ -9,6 +9,9 @@ public class Calculator {
     private static final char SUBTRACTION = '-';
     private static final char MULTIPLICATION = '*';
 
+    private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 100;
+
     public static void run() {
         String gameDescription = "What is the result of the expression?";
 
@@ -18,8 +21,8 @@ public class Calculator {
         String[] correctAnswers = new String[iterations];
 
         for (int i = 0; i < iterations; i++) {
-            int firstOperand = RandomGenerator.generateNumber();
-            int secondOperand = RandomGenerator.generateNumber();
+            int firstOperand = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
+            int secondOperand = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
             char operation = chooseRandomOperation();
 
             questions[i] = firstOperand + " " + operation + " " + secondOperand;

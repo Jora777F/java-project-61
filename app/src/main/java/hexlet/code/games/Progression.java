@@ -7,8 +7,14 @@ public class Progression {
 
     private static final int SEQUENCE_LENGTH = 10;
 
-    private static final int BEGIN = 0;
-    private static final int END = 9;
+    private static final int MIN_INDEX = 0;
+    private static final int MAX_INDEX = 9;
+
+    private static final int MIN_INITIAL_TERM = 1;
+    private static final int MAX_INITIAL_TERM = 100;
+
+    private static final int MIN_COMMON_DIFF = 1;
+    private static final int MAX_COMMON_DIFF = 100;
 
     public static void arithmeticProgression() {
         String gameDescription = "What number is missing in the progression?";
@@ -21,7 +27,7 @@ public class Progression {
         for (int i = 0; i < iterations; i++) {
             String[] sequence = generateSequence();
 
-            int unknownTermIndex = RandomGenerator.generateNumber(BEGIN, END);
+            int unknownTermIndex = RandomGenerator.generateNumber(MIN_INDEX, MAX_INDEX);
             correctAnswers[i] = sequence[unknownTermIndex];
 
             sequence[unknownTermIndex] = "..";
@@ -33,8 +39,8 @@ public class Progression {
 
     private static String[] generateSequence() {
 
-        int initialTerm = RandomGenerator.generateNumber();
-        int commonDiff = RandomGenerator.generateNumber();
+        int initialTerm = RandomGenerator.generateNumber(MIN_INITIAL_TERM, MAX_INITIAL_TERM);
+        int commonDiff = RandomGenerator.generateNumber(MIN_COMMON_DIFF, MAX_COMMON_DIFF);
 
         String[] sequence = new String[SEQUENCE_LENGTH];
 
