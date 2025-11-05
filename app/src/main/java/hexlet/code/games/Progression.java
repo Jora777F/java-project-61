@@ -21,8 +21,7 @@ public class Progression {
 
         int iterations = Engine.getNumberIterations();
 
-        String[] questions = new String[iterations];
-        String[] correctAnswers = new String[iterations];
+        String[][] questionAndAnswers = new String[iterations][2];
 
         for (int i = 0; i < iterations; i++) {
             int initialTerm = RandomGenerator.generateNumber(MIN_INITIAL_TERM, MAX_INITIAL_TERM);
@@ -31,13 +30,13 @@ public class Progression {
             String[] sequence = makeProgression(initialTerm, commonDiff, SEQUENCE_LENGTH);
 
             int unknownTermIndex = RandomGenerator.generateNumber(MIN_INDEX, MAX_INDEX);
-            correctAnswers[i] = sequence[unknownTermIndex];
+            questionAndAnswers[i][1] = sequence[unknownTermIndex];
 
             sequence[unknownTermIndex] = "..";
-            questions[i] = String.join(" ", sequence);
+            questionAndAnswers[i][0] = String.join(" ", sequence);
         }
 
-        Engine.runGame(gameDescription, questions, correctAnswers);
+        Engine.runGame(gameDescription, questionAndAnswers);
     }
 
     private static String[] makeProgression(int first, int step, int length) {

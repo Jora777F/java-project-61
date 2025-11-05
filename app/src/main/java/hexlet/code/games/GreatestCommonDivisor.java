@@ -13,8 +13,7 @@ public class GreatestCommonDivisor {
 
         int iterations = Engine.getNumberIterations();
 
-        String[] questions = new String[iterations];
-        String[] correctAnswers = new String[iterations];
+        String[][] questionAndAnswers = new String[iterations][2];
 
         for (int i = 0; i < iterations; i++) {
             int firstNumber = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
@@ -22,11 +21,11 @@ public class GreatestCommonDivisor {
 
             int answer = calculateDivisor(firstNumber, secondNumber);
 
-            questions[i] = firstNumber + " " + secondNumber;
-            correctAnswers[i] = String.valueOf(answer);
+            questionAndAnswers[i][0] = firstNumber + " " + secondNumber;
+            questionAndAnswers[i][1] = String.valueOf(answer);
         }
 
-        Engine.runGame(gameDescription, questions, correctAnswers);
+        Engine.runGame(gameDescription, questionAndAnswers);
     }
 
     private static int calculateDivisor(int firstNumber, int secondNumber) {

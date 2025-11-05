@@ -13,16 +13,15 @@ public class Prime {
 
         int iterations = Engine.getNumberIterations();
 
-        String[] questions = new String[iterations];
-        String[] correctAnswers = new String[iterations];
+        String[][] questionAndAnswers = new String[iterations][2];
 
         for (int i = 0; i < iterations; i++) {
             int number = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
-            questions[i] = String.valueOf(number);
-            correctAnswers[i] = isPrimeNumber(number) ? "yes" : "no";
+            questionAndAnswers[i][0] = String.valueOf(number);
+            questionAndAnswers[i][1] = isPrimeNumber(number) ? "yes" : "no";
         }
 
-        Engine.runGame(gameDescription, questions, correctAnswers);
+        Engine.runGame(gameDescription, questionAndAnswers);
     }
 
     /**

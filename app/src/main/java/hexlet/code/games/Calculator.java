@@ -19,8 +19,7 @@ public class Calculator {
 
         int iterations = Engine.getNumberIterations();
 
-        String[] questions = new String[iterations];
-        String[] correctAnswers = new String[iterations];
+        String[][] questionAndAnswers = new String[iterations][2];
 
         for (int i = 0; i < iterations; i++) {
             int firstOperand = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
@@ -29,13 +28,13 @@ public class Calculator {
             int operationIndex = RandomGenerator.generateNumber(0, OPERATIONS.length - 1);
             char operation = OPERATIONS[operationIndex].charAt(0);
 
-            questions[i] = firstOperand + " " + operation + " " + secondOperand;
+            questionAndAnswers[i][0] = firstOperand + " " + operation + " " + secondOperand;
 
             int answer = calculate(firstOperand, secondOperand, operation);
-            correctAnswers[i] = String.valueOf(answer);
+            questionAndAnswers[i][1] = String.valueOf(answer);
         }
 
-        Engine.runGame(gameDescription, questions, correctAnswers);
+        Engine.runGame(gameDescription, questionAndAnswers);
     }
 
     public static int calculate(int firstOperand, int secondOperand, char operation) {
