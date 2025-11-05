@@ -12,6 +12,8 @@ public class Calculator {
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 100;
 
+    private static final String[] OPERATIONS = {"+", "-", "*"};
+
     public static void run() {
         String gameDescription = "What is the result of the expression?";
 
@@ -23,7 +25,9 @@ public class Calculator {
         for (int i = 0; i < iterations; i++) {
             int firstOperand = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
             int secondOperand = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
-            char operation = chooseRandomOperation();
+
+            int operationIndex = RandomGenerator.generateNumber(0, OPERATIONS.length - 1);
+            char operation = OPERATIONS[operationIndex].charAt(0);
 
             questions[i] = firstOperand + " " + operation + " " + secondOperand;
 
@@ -32,18 +36,6 @@ public class Calculator {
         }
 
         Engine.runGame(gameDescription, questions, correctAnswers);
-    }
-
-    private static char chooseRandomOperation() {
-        String[] operations = {"+", "-", "*"};
-
-        int min = 0;
-        int max = 2;
-        int index = RandomGenerator.generateNumber(min, max);
-
-        String currentOperation = operations[index];
-
-        return currentOperation.charAt(0);
     }
 
     public static int calculate(int firstOperand, int secondOperand, char operation) {
