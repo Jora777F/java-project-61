@@ -86,7 +86,7 @@ public class App {
                 Prime.checkPrime(NUMBER_ITERATIONS, scanner, userName);
                 break;
             default:
-                System.out.println("Invalid game number!");
+                System.out.println("Unknown user choice: " + gameNumber);
         }
     }
 }
