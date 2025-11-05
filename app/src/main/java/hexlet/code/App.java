@@ -31,7 +31,7 @@ public class App {
         int gameNumber;
 
         try {
-            gameNumber = inputGameNumber(scanner);
+            gameNumber = scanner.nextInt();
         } catch (InputMismatchException e) {
             System.out.println("ERROR: Invalid input.");
             scanner.close();
@@ -39,19 +39,21 @@ public class App {
         }
 
         System.out.println();
-        checkExitProgram(gameNumber);
 
-        String userName = sayHello(scanner);
+        if (gameNumber == EXIT) {
+            System.out.println("Goodbye!");
+            scanner.close();
+            return;
+        }
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+
         playGame(gameNumber, scanner, userName);
 
         scanner.close();
-    }
-
-    private static void checkExitProgram(int gameNumber) {
-        if (gameNumber == EXIT) {
-            System.out.println("Goodbye!");
-            System.exit(EXIT);
-        }
     }
 
     private static void showGameList() {
@@ -62,20 +64,6 @@ public class App {
         System.out.println(PROGRESSION + " - Progression");
         System.out.println(PRIME + " - Prime");
         System.out.println(EXIT + " - Exit");
-    }
-
-    private static int inputGameNumber(Scanner scanner) throws InputMismatchException {
-        return scanner.nextInt();
-    }
-
-    public static String sayHello(Scanner scanner) {
-        System.out.println("Welcome to the Brain Games!");
-
-        System.out.print("May I have your name? ");
-        String name = scanner.next();
-        System.out.println("Hello, " + name + "!");
-
-        return name;
     }
 
     private static void playGame(int gameNumber, Scanner scanner, String userName) {
