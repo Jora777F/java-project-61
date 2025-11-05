@@ -19,8 +19,6 @@ public class App {
     private static final int PRIME = 6;
     private static final int EXIT = 0;
 
-    private static final int NUMBER_ITERATIONS = 3;
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -57,6 +55,7 @@ public class App {
 
         playGame(gameNumber);
 
+        //TODO: Подумать о месте применения close()
         scanner.close();
     }
 
