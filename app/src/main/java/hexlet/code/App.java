@@ -46,12 +46,16 @@ public class App {
             return;
         }
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
+        if (gameNumber == GREET) {
+            System.out.println("Welcome to the Brain Games!");
+            System.out.print("May I have your name? ");
+            String userName = scanner.next();
+            System.out.println("Hello, " + userName + "!");
+            scanner.close();
+            return;
+        }
 
-        playGame(gameNumber, scanner, userName);
+        playGame(gameNumber);
 
         scanner.close();
     }
@@ -66,24 +70,24 @@ public class App {
         System.out.println(EXIT + " - Exit");
     }
 
-    private static void playGame(int gameNumber, Scanner scanner, String userName) {
+    private static void playGame(int gameNumber) {
         switch (gameNumber) {
             case GREET:
                 break;
             case EVEN:
-                Even.checkEven(NUMBER_ITERATIONS, scanner, userName);
+                Even.checkEven();
                 break;
             case CALCULATOR:
-                Calculator.run(NUMBER_ITERATIONS, scanner, userName);
+                Calculator.run();
                 break;
             case GCD:
-                GreatestCommonDivisor.search(NUMBER_ITERATIONS, scanner, userName);
+                GreatestCommonDivisor.search();
                 break;
             case PROGRESSION:
-                Progression.arithmeticProgression(NUMBER_ITERATIONS, scanner, userName);
+                Progression.arithmeticProgression();
                 break;
             case PRIME:
-                Prime.checkPrime(NUMBER_ITERATIONS, scanner, userName);
+                Prime.checkPrime();
                 break;
             default:
                 System.out.println("Unknown user choice: " + gameNumber);
