@@ -54,9 +54,6 @@ public class App {
         }
 
         playGame(gameNumber);
-
-        //TODO: Подумать о месте применения close()
-        scanner.close();
     }
 
     private static void showGameList() {
