@@ -3,15 +3,15 @@ package hexlet.code.games;
 import hexlet.code.engine.Engine;
 import hexlet.code.util.RandomGenerator;
 
-import java.util.Scanner;
-
 public class GreatestCommonDivisor {
 
-    public static void search(int iterations, Scanner scanner, String userName) {
+    public static void search() {
+        String gameDescription = "Find the greatest common divisor of given numbers.";
+
+        int iterations = Engine.getNumberIterations();
+
         String[] questions = new String[iterations];
         String[] correctAnswers = new String[iterations];
-
-        System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < iterations; i++) {
             int firstNumber = RandomGenerator.generateNumber();
@@ -23,7 +23,7 @@ public class GreatestCommonDivisor {
             correctAnswers[i] = String.valueOf(answer);
         }
 
-        Engine.runGame(questions, correctAnswers, userName, scanner);
+        Engine.runGame(gameDescription, questions, correctAnswers);
     }
 
     private static int calculateDivisor(int firstNumber, int secondNumber) {

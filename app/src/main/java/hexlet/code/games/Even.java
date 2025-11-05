@@ -3,12 +3,12 @@ package hexlet.code.games;
 import hexlet.code.engine.Engine;
 import hexlet.code.util.RandomGenerator;
 
-import java.util.Scanner;
-
 public class Even {
 
-    public static void checkEven(int iterations, Scanner scanner, String userName) {
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+    public static void checkEven() {
+        String gameDescription = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
+        int iterations = Engine.getNumberIterations();
 
         String[] questions = new String[iterations];
         String[] correctAnswers = new String[iterations];
@@ -19,7 +19,7 @@ public class Even {
             correctAnswers[i] = isEvenNumber(randomNumber) ? "yes" : "no";
         }
 
-        Engine.runGame(questions, correctAnswers, userName, scanner);
+        Engine.runGame(gameDescription, questions, correctAnswers);
     }
 
     private static boolean isEvenNumber(int number) {

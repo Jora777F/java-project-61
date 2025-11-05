@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.engine.Engine;
 import hexlet.code.util.RandomGenerator;
 
-import java.util.Scanner;
-
 public class Progression {
 
     private static final int SEQUENCE_LENGTH = 10;
@@ -12,8 +10,10 @@ public class Progression {
     private static final int BEGIN = 0;
     private static final int END = 9;
 
-    public static void arithmeticProgression(int iterations, Scanner scanner, String userName) {
-        System.out.println("What number is missing in the progression?");
+    public static void arithmeticProgression() {
+        String gameDescription = "What number is missing in the progression?";
+
+        int iterations = Engine.getNumberIterations();
 
         String[] questions = new String[iterations];
         String[] correctAnswers = new String[iterations];
@@ -28,7 +28,7 @@ public class Progression {
             questions[i] = String.join(" ", sequence);
         }
 
-        Engine.runGame(questions, correctAnswers, userName, scanner);
+        Engine.runGame(gameDescription, questions, correctAnswers);
     }
 
     private static String[] generateSequence() {

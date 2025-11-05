@@ -3,16 +3,16 @@ package hexlet.code.games;
 import hexlet.code.engine.Engine;
 import hexlet.code.util.RandomGenerator;
 
-import java.util.Scanner;
-
 public class Calculator {
 
     private static final char ADDITION = '+';
     private static final char SUBTRACTION = '-';
     private static final char MULTIPLICATION = '*';
 
-    public static void run(int iterations, Scanner scanner, String userName) {
-        System.out.println("What is the result of the expression?");
+    public static void run() {
+        String gameDescription = "What is the result of the expression?";
+
+        int iterations = Engine.getNumberIterations();
 
         String[] questions = new String[iterations];
         String[] correctAnswers = new String[iterations];
@@ -28,7 +28,7 @@ public class Calculator {
             correctAnswers[i] = String.valueOf(answer);
         }
 
-        Engine.runGame(questions, correctAnswers, userName, scanner);
+        Engine.runGame(gameDescription, questions, correctAnswers);
     }
 
     private static char chooseRandomOperation() {

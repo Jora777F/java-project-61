@@ -3,15 +3,15 @@ package hexlet.code.games;
 import hexlet.code.engine.Engine;
 import hexlet.code.util.RandomGenerator;
 
-import java.util.Scanner;
-
 public class Prime {
 
     private static final int BEGIN = 2;
     private static final int END = 100;
 
-    public static void checkPrime(int iterations, Scanner scanner, String userName) {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+    public static void checkPrime() {
+        String gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
+        int iterations = Engine.getNumberIterations();
 
         String[] questions = new String[iterations];
         String[] correctAnswers = new String[iterations];
@@ -22,7 +22,7 @@ public class Prime {
             correctAnswers[i] = isPrimeNumber(number) ? "yes" : "no";
         }
 
-        Engine.runGame(questions, correctAnswers, userName, scanner);
+        Engine.runGame(gameDescription, questions, correctAnswers);
     }
 
     /**
