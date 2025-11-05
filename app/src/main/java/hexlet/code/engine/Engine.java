@@ -4,7 +4,18 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static void runGame(String[] questions, String[] correctAnswers, String userName, Scanner scanner) {
+    private static final int NUMBER_ITERATIONS = 3;
+
+    public static void runGame(String gameDescription, String[] questions, String[] correctAnswers) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+
+        System.out.println(gameDescription);
+
         for (int i = 0; i < questions.length; i++) {
             String question = questions[i];
             String correctAnswer = correctAnswers[i];
@@ -26,5 +37,10 @@ public class Engine {
         }
 
         System.out.println("Congratulations, " + userName + "!");
+        scanner.close();
+    }
+
+    public static int getNumberIterations() {
+        return NUMBER_ITERATIONS;
     }
 }
