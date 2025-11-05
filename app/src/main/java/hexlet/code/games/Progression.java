@@ -16,7 +16,7 @@ public class Progression {
     private static final int MIN_COMMON_DIFF = 1;
     private static final int MAX_COMMON_DIFF = 100;
 
-    public static void arithmeticProgression() {
+    public static void run() {
         String gameDescription = "What number is missing in the progression?";
 
         int iterations = Engine.getNumberIterations();
@@ -25,7 +25,10 @@ public class Progression {
         String[] correctAnswers = new String[iterations];
 
         for (int i = 0; i < iterations; i++) {
-            String[] sequence = generateSequence();
+            int initialTerm = RandomGenerator.generateNumber(MIN_INITIAL_TERM, MAX_INITIAL_TERM);
+            int commonDiff = RandomGenerator.generateNumber(MIN_COMMON_DIFF, MAX_COMMON_DIFF);
+
+            String[] sequence = makeProgression(initialTerm, commonDiff, SEQUENCE_LENGTH);
 
             int unknownTermIndex = RandomGenerator.generateNumber(MIN_INDEX, MAX_INDEX);
             correctAnswers[i] = sequence[unknownTermIndex];
@@ -37,30 +40,13 @@ public class Progression {
         Engine.runGame(gameDescription, questions, correctAnswers);
     }
 
-    private static String[] generateSequence() {
+    private static String[] makeProgression(int first, int step, int length) {
+        String[] progression = new String[length];
 
-        int initialTerm = RandomGenerator.generateNumber(MIN_INITIAL_TERM, MAX_INITIAL_TERM);
-        int commonDiff = RandomGenerator.generateNumber(MIN_COMMON_DIFF, MAX_COMMON_DIFF);
-
-        String[] sequence = new String[SEQUENCE_LENGTH];
-
-        for (int i = 0; i < SEQUENCE_LENGTH; i++) {
-            int term = calculateSequenceTerm(initialTerm, commonDiff, i);
-            sequence[i] = String.valueOf(term);
+        for (int i = 0; i < length; i++) {
+            progression[i] = Integer.toString(first + i * step);
         }
 
-        return sequence;
+        return progression;
     }
-
-    /**
-     * Вычисление элемента последовательности.
-     * @param initialTerm начальный элемент
-     * @param commonDiff шаг
-     * @param n индекс
-     * @return элемент последовательности
-     */
-    private static int calculateSequenceTerm(int initialTerm, int commonDiff, int n) {
-        return initialTerm + (n - 1) * commonDiff;
-    }
-
 }

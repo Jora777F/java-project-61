@@ -83,7 +83,7 @@ public class App {
                 GreatestCommonDivisor.search();
                 break;
             case PROGRESSION:
-                Progression.arithmeticProgression();
+                Progression.run();
                 break;
             case PRIME:
                 Prime.checkPrime();
