@@ -42,7 +42,7 @@ public class Calculator {
             case ADDITION -> firstOperand + secondOperand;
             case SUBTRACTION -> firstOperand - secondOperand;
             case MULTIPLICATION -> firstOperand * secondOperand;
-            default -> 0;
+            default -> throw new RuntimeException("Unknown operation " + operation);
         };
     }
 }
