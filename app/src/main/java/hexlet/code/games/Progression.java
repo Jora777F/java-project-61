@@ -19,11 +19,9 @@ public class Progression {
     public static void run() {
         String gameDescription = "What number is missing in the progression?";
 
-        int iterations = Engine.getNumberIterations();
+        String[][] questionAndAnswers = new String[Engine.ROUNDS][2];
 
-        String[][] questionAndAnswers = new String[iterations][2];
-
-        for (int i = 0; i < iterations; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int initialTerm = RandomGenerator.generateNumber(MIN_INITIAL_TERM, MAX_INITIAL_TERM);
             int commonDiff = RandomGenerator.generateNumber(MIN_COMMON_DIFF, MAX_COMMON_DIFF);
 

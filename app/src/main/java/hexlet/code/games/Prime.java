@@ -11,11 +11,9 @@ public class Prime {
     public static void run() {
         String gameDescription = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        int iterations = Engine.getNumberIterations();
+        String[][] questionAndAnswers = new String[Engine.ROUNDS][2];
 
-        String[][] questionAndAnswers = new String[iterations][2];
-
-        for (int i = 0; i < iterations; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int number = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
             questionAndAnswers[i][0] = String.valueOf(number);
             questionAndAnswers[i][1] = isPrimeNumber(number) ? "yes" : "no";

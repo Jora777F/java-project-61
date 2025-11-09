@@ -11,11 +11,9 @@ public class Even {
     public static void run() {
         String gameDescription = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        int iterations = Engine.getNumberIterations();
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS][2];
 
-        String[][] questionsAndAnswers = new String[iterations][2];
-
-        for (int i = 0; i < iterations; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int randomNumber = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
             questionsAndAnswers[i][0] = String.valueOf(randomNumber);
             questionsAndAnswers[i][1] = isEvenNumber(randomNumber) ? "yes" : "no";

@@ -11,11 +11,9 @@ public class GreatestCommonDivisor {
     public static void run() {
         String gameDescription = "Find the greatest common divisor of given numbers.";
 
-        int iterations = Engine.getNumberIterations();
+        String[][] questionAndAnswers = new String[Engine.ROUNDS][2];
 
-        String[][] questionAndAnswers = new String[iterations][2];
-
-        for (int i = 0; i < iterations; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int firstNumber = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
             int secondNumber = RandomGenerator.generateNumber(MIN_NUMBER, MAX_NUMBER);
 

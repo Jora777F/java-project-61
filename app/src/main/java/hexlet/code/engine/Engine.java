@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static final int NUMBER_ITERATIONS = 3;
+    public static final int ROUNDS = 3;
 
     public static void runGame(String gameDescription, String[][] questionsAndAnswers) {
         Scanner scanner = new Scanner(System.in);
@@ -38,9 +38,5 @@ public class Engine {
 
         System.out.println("Congratulations, " + userName + "!");
         scanner.close();
-    }
-
-    public static int getNumberIterations() {
-        return NUMBER_ITERATIONS;
     }
 }
