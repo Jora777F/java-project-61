@@ -23,7 +23,15 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Please enter the game number and press Enter.");
-        showGameList();
+
+        System.out.println(GREET + " - Greet");
+        System.out.println(EVEN + " - Even");
+        System.out.println(CALCULATOR + " - Calc");
+        System.out.println(GCD + " - GCD");
+        System.out.println(PROGRESSION + " - Progression");
+        System.out.println(PRIME + " - Prime");
+        System.out.println(EXIT + " - Exit");
+
         System.out.print("Your choice: ");
 
         int gameNumber;
@@ -38,12 +46,6 @@ public class App {
 
         System.out.println();
 
-        if (gameNumber == EXIT) {
-            System.out.println("Goodbye!");
-            scanner.close();
-            return;
-        }
-
         if (gameNumber == GREET) {
             System.out.println("Welcome to the Brain Games!");
             System.out.print("May I have your name? ");
@@ -54,21 +56,13 @@ public class App {
         }
 
         playGame(gameNumber);
-    }
-
-    private static void showGameList() {
-        System.out.println(GREET + " - Greet");
-        System.out.println(EVEN + " - Even");
-        System.out.println(CALCULATOR + " - Calc");
-        System.out.println(GCD + " - GCD");
-        System.out.println(PROGRESSION + " - Progression");
-        System.out.println(PRIME + " - Prime");
-        System.out.println(EXIT + " - Exit");
+        scanner.close();
     }
 
     private static void playGame(int gameNumber) {
         switch (gameNumber) {
-            case GREET:
+            case EXIT:
+                System.out.println("Goodbye!");
                 break;
             case EVEN:
                 Even.run();
